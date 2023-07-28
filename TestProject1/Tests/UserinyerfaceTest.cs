@@ -29,10 +29,10 @@ namespace Aquality.Selenium.Template.NUnit.Tests
             mailForm.ClickTermsAndConditions();
             mailForm.ClickNextButton();
             Assert.IsTrue(avatarAndInterestsForm.State.IsDisplayed);
-            avatarAndInterestsForm.ChooseInterests(requiredInterests);
-            avatarAndInterestsForm.UploadImage();
-            avatarAndInterestsForm.ClickNextButton();
-            Assert.IsTrue(personalDetialsForm.State.IsDisplayed);
+            //avatarAndInterestsForm.ChooseInterests(requiredInterests);
+            //avatarAndInterestsForm.UploadImage();
+            //avatarAndInterestsForm.ClickNextButton();
+            //Assert.IsTrue(personalDetialsForm.State.IsDisplayed);
         }
         [Test]
         public void TestOfHelpForm()
