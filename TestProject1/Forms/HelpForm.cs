@@ -8,6 +8,7 @@ namespace Aquality.Selenium.Template.Pages
     {
         private readonly IButton sendToBottomButton = ElementFactory.GetButton(By.XPath("//button[contains(@class, 'help-form__send-to-bottom-button')]"), "Send To Bottom Button");
         private readonly ITextBox hiddenHelpForm = ElementFactory.GetTextBox(By.XPath("//div[contains(@class, 'is-hidden')]"), "Hidden Help Form");
+            
 
         public HelpForm() : base(By.ClassName("help-form__container"), "Help Form")
         {
@@ -20,7 +21,9 @@ namespace Aquality.Selenium.Template.Pages
 
         public bool IsHelpFormHidden()
         {
-            return hiddenHelpForm.State.WaitForDisplayed();
+            const int hiddenFormHeight = 10;
+            return ConditionalWait.WaitFor(() => hiddenHelpForm.Visual.Size.Height == hiddenFormHeight);
+            //return hiddenHelpForm.State.WaitForDisplayed();
             
         }            
     }
