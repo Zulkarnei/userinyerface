@@ -25,6 +25,7 @@ namespace Aquality.Selenium.Template.NUnit.Tests
             mainPage.ClickNextPageLink();
             Assert.IsTrue(mailForm.State.IsDisplayed);
             mailForm.ClearAndFillLoginForm(email, password,mailbox);
+            helpForm.ClickSendToBottomButton();
             mailForm.ClickDropDownButton();
             mailForm.ClickTermsAndConditions();
             mailForm.ClickNextButton();
