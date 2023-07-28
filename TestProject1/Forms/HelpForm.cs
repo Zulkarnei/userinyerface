@@ -21,10 +21,9 @@ namespace Aquality.Selenium.Template.Pages
 
         public bool IsHelpFormHidden()
         {
-            const int hiddenFormHeight = 10;
-            return ConditionalWait.WaitFor(() => hiddenHelpForm.Visual.Size.Height == hiddenFormHeight);
-            //return hiddenHelpForm.State.WaitForDisplayed();
-            
+            //const int hiddenFormHeight = 10;
+            //return ConditionalWait.WaitFor(() => hiddenHelpForm.Visual.Size.Height == hiddenFormHeight);
+            return hiddenHelpForm.State.WaitForDisplayed();
         }            
     }
 }
